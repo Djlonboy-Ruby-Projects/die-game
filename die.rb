@@ -1,8 +1,13 @@
 opponent1 = ""
 opponent2 = ""
 dieRoll = 0
-opponent1Roll = 0
-opponent2Roll = 0
+opponent1Roll1 = 0
+opponent1Roll2 = 0
+opponent1Total = 0
+opponent2Roll1 = 0
+opponent2Roll2 = 0
+opponent2Total = 0
+
 system ('clear')
 puts ""
 puts "------------------------------"
@@ -14,25 +19,45 @@ system ('clear')
 
 puts ""
 puts "------------------------------"
-puts "#{opponent1}: your roll..."
+puts "#{opponent1}: your first roll..."
 sleep(2)
 dieRoll = rand(7)
 puts ""
 puts "#{opponent1}, you rolled #{dieRoll}"
-opponent1Roll = dieRoll
+opponent1Roll1 = dieRoll
 puts ""
-puts "#{opponent2}: your roll..."
+puts "#{opponent1}: your second roll..."
+sleep(2)
+dieRoll = rand(7)
+puts ""
+puts "#{opponent1}, you rolled #{dieRoll}"
+opponent1Roll2 = dieRoll
+puts ""
+opponent1Total = opponent1Roll1 + opponent1Roll2
+
+puts ""
+puts "#{opponent2}: your first roll..."
 sleep(2)
 dieRoll = rand(7)
 puts ""
 puts "#{opponent2}, you rolled #{dieRoll}"
-opponent2Roll = dieRoll
+opponent2Roll1 = dieRoll
 puts ""
-if opponent1Roll > opponent2Roll
+puts "#{opponent2}: your second roll..."
+sleep(2)
+dieRoll = rand(7)
+puts ""
+puts "#{opponent2}, you rolled #{dieRoll}"
+opponent2Roll2 = dieRoll
+puts ""
+opponent2Total = opponent2Roll1 + opponent2Roll2
+
+puts ""
+if opponent1Total > opponent2Total
   puts "#{opponent1} wins!"
-elsif opponent1Roll < opponent2Roll
+elsif opponent1Total < opponent2Total
   puts "#{opponent2} wins!"
-elsif opponent1Roll == opponent2Roll
+elsif opponent1Total == opponent2Total
   puts "It's a draw!"
 end
 puts ""
